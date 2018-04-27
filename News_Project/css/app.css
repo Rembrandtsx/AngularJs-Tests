@@ -6,3 +6,7 @@
   color: darkgrey;
   float: left;
 }
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}

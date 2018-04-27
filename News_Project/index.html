@@ -27,9 +27,17 @@
   <body ng-app="newsWikiApp">
       <div class="container">
         <div class="row" ng-controller="CategoriesCtrl as vm">
-          <div class="btn-group" role="group" aria-label="Basic example" >
-              <button type="button" class="btn btn-secondary" ng-repeat="cat in vm.categories">{{cat}}</button>
-          </div>
+
+              <button ng-click="vm.toggleCat()"class="btn btn-light btn-block" style="margin-bottom: 5px; display: block;">Categorias</button>
+
+          <span style="width:1000px;"></span>
+
+            <div ng-show="vm.showCategories" class="btn-group animate-show-hide" role="group" aria-label="Basic example" >
+                <button type="button" class="btn btn-secondary" ng-repeat="cat in vm.categories">{{cat}}</button>
+            </div>
+
+
+
 
 
         </div>
