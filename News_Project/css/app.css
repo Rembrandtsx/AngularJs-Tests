@@ -1,3 +1,8 @@
 .titulo{
   color: steelblue;
 }
+.fecha{
+  font-size: small;
+  color: darkgrey;
+  float: left;
+}

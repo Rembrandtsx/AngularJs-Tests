@@ -86,7 +86,7 @@
                 "tags": ["lifweek", "moda"]
             }
         ];
+    me.categories = ["Politica","Economia","Deportes","Moda","Mundo"]
 
-        
   }
 }());
