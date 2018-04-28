@@ -51,7 +51,7 @@
 
         </div>
           <div class="row card-group" ng-controller="NewsCtrl as vm" >
-            <div class="col-sm-6 col-md-4" ng-repeat="newsItem in vm.news | filter:{destacado:true}" style="padding-bottom: 10px;">
+            <div class="col-sm-6 col-md-4" ng-repeat="newsItem in vm.news | filter:{destacado:true} | orderBy: '-fechaPublicacion'" style="padding-bottom: 10px;">
               <div class="card" style="max-width: 18rem;">
                 <img class="card-img-top" ng-src="{{newsItem.banner}}" >
                   <div class="card-body">
