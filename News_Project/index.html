@@ -28,14 +28,16 @@
       <div class="container">
         <div class="row" ng-controller="CategoriesCtrl as vm">
 
-              <button ng-click="vm.toggleCat()"class="btn btn-light btn-block" style="margin-bottom: 5px; display: block;">Categorias</button>
+              <button ng-click="vm.toggleCat()"class="btn btn-light btn-block" style="margin-bottom: 5px; display: block;">{{vm.showCategories? "Ocultar " : "Mostrar "}}Categorias</button>
 
-          <span style="width:1000px;"></span>
 
-            <div ng-show="vm.showCategories" class="btn-group animate-show-hide" role="group" aria-label="Basic example" >
-                <button type="button" class="btn btn-secondary" ng-repeat="cat in vm.categories">{{cat}}</button>
+
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" ng-show="vm.showCategories">
+              <label class="btn btn-secondary active" ng-repeat="cat in vm.categories">
+                <input type="radio" name="options" id="{{cat}}" autocomplete="off" > {{cat}}
+              </label>
             </div>
-
 
 
 
@@ -70,7 +72,7 @@
             </fieldset>
           </div>
           <div class="row card-group" ng-controller="NewsCtrl as vm" >
-            <div class="col-sm-4 col-md-2" ng-repeat="newsItem in vm.news | filter:{destacado:false}" style="padding-bottom: 10px;">
+            <div class="col-sm-4 col-md-2" ng-repeat="newsItem in vm.news | filter:{destacado:false} | orderBy: '-fechaPublicacion'" style="padding-bottom: 10px;">
               <div class="card" style="">
                 <img class="card-img-top" ng-src="{{newsItem.banner}}" >
                   <div class="card-body">
